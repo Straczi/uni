@@ -1,0 +1,2 @@
+#!/bin/zsh -i
+while true; do inotifywait -q $1 && clear && setlx $1; done
