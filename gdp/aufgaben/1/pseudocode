@@ -1,0 +1,15 @@
+a = input()
+x = a / 2
+z = 0
+
+while True:
+    z = (a / x + x) / 2
+    d = (z - x) * (z - x)
+
+    if d < 0.000_000_1:
+        break
+
+    x = z
+
+print(z)
+
