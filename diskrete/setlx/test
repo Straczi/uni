@@ -1,2 +1,43 @@
-print(2 + 3);
-print(2 * 2);
+A:={n: n in {-4..10} | n%2==0};
+
+B:={2*(n-2): n in {0..7}};
+
+print(#A);
+print(A);
+
+print(#B);
+print(B);
+
+C:={(n-30)/5: n in {10,20..80}};
+
+print(#C);
+print(C);
+
+D:={-4,-2..10};
+print(#D);
+print(D);
+
+H:={0,4,-2,10,0,8,-4,6,-2,2};
+
+print(#H);
+print(H);
+
+S1 := {0,1,true};
+S2 := {{10,20,30,40}};
+S3 := { };
+S4 := {S3,10,20,30,40};
+S5 := {10,20..50};
+S6 := { {1..n} : n in {2..8} };
+S7 := {10, 20, [30..50]};
+S8 := {{true, "true"},2,3,{2,3}};
+S9 := {S2!=S4, true, #S3==0};
+S10 := {S4<=S2,S3<=S4,S3 in S4, S3 in S2, S3 <= S2};
+
+temp := {S1, S2, S3, S4, S5, S6, S7, S8, S9, S10};
+
+a := 0;
+
+for t in temp {
+	print("List: S" + a + " with " + #t + " elements");
+	a := a + 1;
+}
