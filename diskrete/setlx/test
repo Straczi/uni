@@ -49,3 +49,28 @@ print(a);
 
 print(1 in a);
 print(1 notin a);
+
+print();
+print();
+print("mengen verknüpfen, Seite 69 Beispiel 5.12");
+
+A := {1, 2, 3};
+B := {3, 4};
+
+comment := "A ∪ B bzw. A Vereinigung B bzw. Alle Elemente von A und B";
+C1 := A + B;
+print(C1);
+
+comment := "A ∩ B bzw. A Schnitt(menge) B";
+C2 := A * B;
+print(C2);
+
+comment := "A \ B bzw. A Differenz B bzw. Alle Elemente von A, die nicht in B sind";
+C3 := A - B;
+print(C3);
+
+comment := "A-Strich also komplement von A bzw. alles was nicht in A ist. (in SetlX muss eine universumsmenge U angegeben werden dafür)";
+U := {1..10};
+C4 := {x : x in U | x notin A};
+print(C4);
+
