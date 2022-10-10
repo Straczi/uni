@@ -1,3 +1,5 @@
+#!/bin/python3
+
 def wurzel(a):
     x = a / 2
 
