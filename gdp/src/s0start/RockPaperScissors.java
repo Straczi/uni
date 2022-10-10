@@ -25,8 +25,7 @@ public class RockPaperScissors {
 			return;
 		}
 		
-		if (
-				(a_choice == 'r' && b_choice == 's')
+		if ((a_choice == 'r' && b_choice == 's')
 				|| (a_choice == 'p' && b_choice == 'r')
 				|| (a_choice == 's' && b_choice == 'p')
 			) {
