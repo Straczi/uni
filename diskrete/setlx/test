@@ -52,7 +52,7 @@ print(1 notin a);
 
 print();
 print();
-print("mengen verknüpfen, Seite 69 Beispiel 5.12");
+print("Mengen verknüpfen, Seite 69 Beispiel 5.12");
 
 A := {1, 2, 3};
 B := {3, 4};
