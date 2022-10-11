@@ -14,7 +14,7 @@ public class TentCanvas {
 		double dreieck = 0.5 * b * h;
 		
 		double c = Math.sqrt(Math.pow(b / 2, 2) + Math.pow(h, 2));
-		
+
 		double viereck = t * c;
 		double grundfläche = t * b;
 		

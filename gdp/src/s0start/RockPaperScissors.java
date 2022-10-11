@@ -6,8 +6,8 @@ public class RockPaperScissors {
 	public static void main(String[] args) {
 		var scanner = new Scanner(System.in);
 		
-		char a_choice = scanner.next().charAt(0);
-		char b_choice = scanner.next().charAt(0);
+		char a_choice = scanner.next().toLowerCase().charAt(0);
+		char b_choice = scanner.next().toLowerCase().charAt(0);
 		
 		if (schummelt(a_choice) && schummelt(b_choice)) {
 			System.out.println("Beide schummeln");
