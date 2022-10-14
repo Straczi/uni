@@ -1,77 +1,8 @@
-A:={n: n in {-4..10} | n%2==0};
-
-B:={2*(n-2): n in {0..7}};
-
-print(#A);
-print(A);
-
-print(#B);
-print(B);
-
-C:={(n-30)/5: n in {10,20..80}};
-
-print(#C);
-print(C);
-
-D:={-4,-2..10};
-print(#D);
-print(D);
-
-H:={0,4,-2,10,0,8,-4,6,-2,2};
-
-print(#H);
-print(H);
-
-S1 := {0,1,true};
-S2 := {{10,20,30,40}};
-S3 := { };
-S4 := {S3,10,20,30,40};
-S5 := {10,20..50};
-S6 := { {1..n} : n in {2..8} };
-S7 := {10, 20, [30..50]};
-S8 := {{true, "true"},2,3,{2,3}};
-S9 := {S2!=S4, true, #S3==0};
-S10 := {S4<=S2,S3<=S4,S3 in S4, S3 in S2, S3 <= S2};
-
-temp := [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10];
-
-a := 1;
-
-for (t in temp) {
-	print("List: S" + a + " with " + #t + " elements");
-	a := a + 1;
-}
-
-a := {1, 2, 3, 5, 6, 4, 3, 2, 9, 8, 7, 8 , 7 , 7 , 7 , 1, 2, 1, 2, 345634643563456, "true", "false", "abc", "cba" ,3, 0, -1, -2, -3, -4, -9, true, false};
-
-print(#a);
-print(a);
-
-print(1 in a);
-print(1 notin a);
-
-print();
-print();
-print("Mengen verknüpfen, Seite 69 Beispiel 5.12");
-
 A := {1, 2, 3};
-B := {3, 4};
+B := {1, 2};
+C := {4, 5};
 
-comment := "A ∪ B bzw. A Vereinigung B bzw. Alle Elemente von A und B";
-C1 := A + B;
-print(C1);
+D := {{}, 1, 2, 3};
+E := {{}, "a", "b", "c"};
 
-comment := "A ∩ B bzw. A Schnitt(menge) B";
-C2 := A * B;
-print(C2);
-
-comment := "A \ B bzw. A Differenz B bzw. Alle Elemente von A, die nicht in B sind";
-C3 := A - B;
-print(C3);
-
-comment := "A-Strich also komplement von A bzw. alles was nicht in A ist. (in SetlX muss eine universumsmenge U angegeben werden dafür)";
-U := {1..10};
-C4 := {x : x in U | x notin A};
-print(C4);
-
-print("a");
+print(D * E);
