@@ -43,9 +43,7 @@ public class Framed extends MiniApp {
 				yCoord = WINDOW_HEIGHT - RADIUS;
 			}
 			
-			removeDrawable("ball");
 			fillCircle("ball", xCoord, yCoord, RADIUS, Color.BLACK);
-			//drawImage("ball", xCoord, yCoord, "/home/flamion/Downloads/duck.jpg");
 
 		}
 		
