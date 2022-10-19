@@ -1,8 +1,11 @@
-A := {1, 2, 3};
-B := {1, 2};
-C := {4, 5};
+A := {1,2};
+B := {1,2,3};
+C := B - A;
 
-D := {{}, 1, 2, 3};
-E := {{}, "a", "b", "c"};
+print(C);
+print();
+print();
 
-print(D * E);
+print(B * C);
+print(C - A);
+print(A * C);
