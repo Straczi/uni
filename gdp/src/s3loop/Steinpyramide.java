@@ -1,12 +1,14 @@
-package s0start;
+package s3loop;
 
 import java.util.Scanner;
+
+import std.ui.MiniApp;
 
 
 // Es gibt nur Steine der Länge 1, 2, 3, 4, 6 und 8. 
 
 
-public class Steinpyramide {
+public class Steinpyramide extends MiniApp {
 	public static void main(String[] args) {
 		var scanner = new Scanner(System.in);
 		
@@ -16,15 +18,19 @@ public class Steinpyramide {
 		for (int i = h; i >= 0; i--) {
 			int width = (i - 1) * 2 + 1;
 			
+			int pos = p + h - i;
 			while(width > 0) {
-				if (width < 8) {
-					
-				}
+				int brickSize = getMaxBrickSize(width);
+				
+				placeBrick(pos, true, brickSize);
+				
+				width -= brickSize;
+				pos += brickSize;
 			}
 		}
 	}
-	
-	int getMaxBrickSize(int b) {
+
+	static int getMaxBrickSize(int b) {
 		if (b <= 4) {
 			return b;
 		} else if (b == 5) {
