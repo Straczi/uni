@@ -1,4 +1,4 @@
-package s3loop;
+package s4func;
 
 import java.util.Scanner;
 
