@@ -13,22 +13,6 @@ public class LongestWord {
 	
 	
 	static String pickLongest(String text) {
-		/*
-		int longestWordPos = 0;
-		int longestWordLen = -1;
-		
-		int currentWordLen = 0;
-		for (int i = 0; i < text.length(); i++) {
-			currentWordLen++;
-			
-			if (text.charAt(i) == ' ' && longestWordLen < currentWordLen) {
-				longestWordPos = i;
-				longestWordLen = currentWordLen;
-				currentWordLen = 0;
-			}
-		}	
-		*/
-		
 		String longestWord = "";
 		String currentWord = "";
 		for (int i = 0; i < text.length(); i++) {

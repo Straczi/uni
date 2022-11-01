@@ -23,6 +23,8 @@ public class NearestFields {
 				}
 			}
 		}
+		
+		scanner.close();
 	}
 	
 	static boolean pointInRectangle(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY, int x, int y) {

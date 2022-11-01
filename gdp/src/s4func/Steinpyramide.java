@@ -28,6 +28,8 @@ public class Steinpyramide extends MiniApp {
 				pos += brickSize;
 			}
 		}
+		
+		scanner.close();
 	}
 
 	static int getMaxBrickSize(int b) {

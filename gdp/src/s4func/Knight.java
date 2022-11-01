@@ -1,6 +1,7 @@
 package s4func;
 
 public class Knight {
+	
 	static long mark(long field, int row, int column) {
 		return field | (1L << ((row * 8) + column));
 	}
