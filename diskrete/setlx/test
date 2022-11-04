@@ -1,5 +1,6 @@
-M := {1..100};
+A := {1, 2, 3};
+B := {4, 5, 6};
 
-a := exists(x in M | x < 2 && !exists(y in M \ {x} | y < 2));
+C := A >< B;
 
-print(a);
+print(C);
