@@ -32,7 +32,6 @@ public class PowerTests {
 		assertEquals(0.25, Power.power(2, -2), 0.0);
 		assertEquals(0.0625, Power.power(2, -4), 0.0);
 		assertEquals(0.015625, Power.power(2, -6), 0.0);
-		assertEquals(0.0016, Power.power(25, -4), 0.0);
 	}
 	
 	@Test

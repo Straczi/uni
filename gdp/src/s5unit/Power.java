@@ -12,11 +12,21 @@ public class Power {
 		if (n == 0) {
 			return 1.0;
 		}
+		
 		double z = x;
-		while (n > 1) {
-			z *= x;
-			n -= 1;
+		if (n < 0) {
+			z = 1.0;
+			while (n < 0) {
+				z /= x;
+				n += 1;
+			}
+		} else {
+			while (n > 1) {
+				z *= x;
+				n -= 1;
+			}
 		}
+
 		return z;
 	}
 
