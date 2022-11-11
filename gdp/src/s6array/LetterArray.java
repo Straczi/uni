@@ -17,12 +17,12 @@ public class LetterArray {
 
 	static int[] countLetters(String text) {
 		int[] charCounts = new int[26];
-		text = text.toLowerCase();
 
-		text.chars()
-				.map(i -> (char) i)
-				.filter(Character::isAlphabetic)
-				.forEach(c -> charCounts[c - 97]++);
+		text.toLowerCase()
+			.chars()
+			.map(i -> (char) i)
+			.filter(Character::isAlphabetic)
+			.forEach(c -> charCounts[c - 97]++);
 
 		return charCounts;
 	}
