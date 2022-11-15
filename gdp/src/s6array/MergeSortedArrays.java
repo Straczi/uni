@@ -11,7 +11,6 @@ public class MergeSortedArrays {
 		int bIndex = 0;
 		
 		for (int i = 0; i < out.length; i++) {
-			
 			if (aIndex < a.length && bIndex < b.length && a[aIndex] < b[bIndex]) {
 				out[i] = a[aIndex];
 				aIndex++;

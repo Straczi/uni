@@ -17,10 +17,18 @@ public class MostFrequent {
 		System.out.println("Most frequent = " + mostFrequent);
 	}
 	
-	public static int mostfreq(int[] a) {
+	
+	/**
+	 * Gets the most frequent integer from the input array.
+	 * Expects that the numbers are in the range 1..10000.
+	 * 
+	 * @param	arr	array of integers
+	 * @return	the	most frequent integer from the input array
+	 */
+	public static int mostfreq(int[] array) {
 		int[] numbers = new int[10_000];
 		
-		for(int i : a) {
+		for(int i : array) {
 			numbers[i]++;
 		}
 		
