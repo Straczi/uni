@@ -4,8 +4,6 @@ public class MergeSortedArrays {
 	public static void main(String[] args) {
 
 	}
-
-	public static void test(Function)
 	
 	public static int[] merge(int[] a, int[] b) {
 		int[] out = new int[a.length + b.length];
