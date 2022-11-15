@@ -18,7 +18,6 @@ public class MostFrequent {
 	}
 	
 	public static int mostfreq(int[] a) {
-		// Wäre jetzt eine HashMap angebracht?
 		int[] numbers = new int[10_000];
 		
 		for(int i : a) {
