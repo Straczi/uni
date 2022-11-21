@@ -22,7 +22,7 @@ public class LetterArray {
 			.chars()
 			.map(i -> (char) i)
 			.filter(Character::isAlphabetic)
-			.forEach(c -> charCounts[c - 97]++);
+			.forEach(c -> charCounts[c - 'a']++);
 
 		return charCounts;
 	}
