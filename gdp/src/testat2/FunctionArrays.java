@@ -34,6 +34,8 @@ public class FunctionArrays {
 		assert countEvenNumbersInMatrix(values2).equals(new int[] { 3, -1, 0, 4, -1 });
 
 		assert filter(values).equals(new long[] { 0, 600, 12300 });
+		assert filter(values).equals(new long[] { 0, 600, 12300, 2314, 992183 });
+		assert filter(values).equals(new long[] { 0, 600, 12300, 1, 2, 3, 2415425 });
 		assert filter(values2[0]).equals(new long[] {0});
 		assert filter(values2[0]).equals(new long[] {});
 		assert filter(values2[0]).equals(new long[] {});
