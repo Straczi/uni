@@ -1,12 +1,9 @@
-A := {'x'};
-B := {'y'};
-C := {'u'};
-D := {'v'};
+A := {1..6};
+B := {4..10};
 
-E := (A + C) >< (B + D);
-F := (A >< B) + (C >< D);
+print(A);
+print(B);
 
-print(E);
-print(F);
-print(E < F);
-
+print(A * B);
+print(A - B);
+print(A + B);
