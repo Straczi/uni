@@ -1,0 +1,6 @@
+palindrom := procedure(arr) {
+		
+};
+
+print(palindrom(['a', 'n', 'n', 'a']));
+print(palindrom(['r', 'a', 'd', 'a', 'r']));
