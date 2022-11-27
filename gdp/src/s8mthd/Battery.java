@@ -3,6 +3,7 @@ package s8mthd;
 public class Battery {
 	private int capacity;
 	private int chargeAmount = 0;
+	private int cycles = 0;
 	
 	public static void main(String[] args) {
 		var bat = new Battery(1000);
@@ -32,7 +33,8 @@ public class Battery {
 			this.chargeAmount = this.capacity;
 		}
 		
-		this.capacity -= 1;
+		this.capacity--;
+		this.cycles++:
 	}
 	
 	public String consume() {
@@ -42,6 +44,8 @@ public class Battery {
 		for (int i = 0; i < amountOfStars; i++) {
 			sb.append('*');
 		}
+
+		this.chargeAmount = 0;
 		
 		return sb.toString();
 	}
