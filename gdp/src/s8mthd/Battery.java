@@ -19,7 +19,7 @@ public class Battery {
 	}
 	
 	public boolean isFull() {
-		return ((double)this.chargeAmount / (double)this.capacity) > 0.9;
+		return ((double)this.chargeAmount / (double)this.capacity) >= 0.9;
 	}
 	
 	public int getCapacity() {
@@ -34,7 +34,7 @@ public class Battery {
 		}
 		
 		this.capacity--;
-		this.cycles++:
+		this.cycles++;
 	}
 	
 	public String consume() {

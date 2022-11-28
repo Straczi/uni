@@ -1,9 +1,8 @@
-A := {1..6};
-B := {4..10};
+exp := procedure(n) {
+	return closure(x) {
+		return x ** n;
+	};
+};
 
-print(A);
-print(B);
 
-print(A * B);
-print(A - B);
-print(A + B);
+print(exp(2)(8));
