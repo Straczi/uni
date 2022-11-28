@@ -46,7 +46,7 @@ class Pot extends MiniApp {
 		Color color = Color.BLACK;
 		if (this.current == 1000) {
 			color = Color.GREEN;
-		} else if () {
+		} else if (false) {
 			
 		}
 		
