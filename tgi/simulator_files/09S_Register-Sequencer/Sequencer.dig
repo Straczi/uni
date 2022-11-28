@@ -224,7 +224,7 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>Execute</string>
+          <string>EXECUTE</string>
         </entry>
       </elementAttributes>
       <pos x="1100" y="80"/>
