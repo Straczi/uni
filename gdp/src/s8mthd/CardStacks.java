@@ -2,8 +2,8 @@ package s8mthd;
 
 public class CardStacks {
 	public static void main(String[] args) {
-		var stack = new CardDeck(2);
-		var stack2 = new CardDeck(2);
+		var stack = new CardDeck(1);
+		var stack2 = new CardDeck(0);
 		
 		System.out.println("Stacks");
 		System.out.println(stack);
@@ -24,8 +24,7 @@ public class CardStacks {
 		System.out.println();
 		
 		System.out.println("move all");
-		System.out.println();
-		System.out.println("Stacks:");
+		System.out.println("Stacks before:");
 		System.out.println(stack);
 		System.out.println(stack2);
 		System.out.println();
@@ -99,12 +98,8 @@ class CardDeck {
 			return;
 		}
 		
-		if (this.amountOfCards == this.cards.length) {
-			Card[] newCardStack = new Card[this.cards.length * 2];
-			for (int i = 0; i < this.cards.length; i++) {
-				newCardStack[i] = this.cards[i];
-			}
-			this.cards = newCardStack;
+		if (this.capacity() == 0) {
+			this.growBackingArray();
 		}
 
 		this.cards[amountOfCards] = card;
@@ -138,6 +133,18 @@ class CardDeck {
 		sb.append(" }");
 		
 		return sb.toString();
+	}
+	
+	private int capacity() {
+		return this.cards.length - this.amountOfCards;
+	}
+	
+	private void growBackingArray() {
+		Card[] newCardStack = new Card[(this.cards.length + 1) * 2];
+		for (int i = 0; i < this.cards.length; i++) {
+			newCardStack[i] = this.cards[i];
+		}
+		this.cards = newCardStack;
 	}
 }
 
