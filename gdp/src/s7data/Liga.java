@@ -1,13 +1,13 @@
 package s7data;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+//import static org.junit.Assert.assertNotNull;
+//import static org.junit.Assert.assertTrue;
 
 public class Liga {
 	private static Team[] teams;
 	
 	public static Team[] createTeams(String... names) {
-		assertNotNull(names);
+//		assertNotNull(names);
 		
 		Team[] teams = new Team[names.length];
 		
@@ -20,7 +20,7 @@ public class Liga {
 	}
 	
 	public static Team getTeam(String name) {
-		assertNotNull(name);
+//		assertNotNull(name);
 		
 		Team team = null;
 		
@@ -34,11 +34,11 @@ public class Liga {
 	}
 	
 	public static void match(Team heim, Team gast, int toreHeim, int toreGast) {
-		assertNotNull(heim);
-		assertNotNull(gast);
-		assertTrue(heim != gast);
-		assertTrue(toreHeim >= 0);
-		assertTrue(toreGast >= 0);
+//		assertNotNull(heim);
+//		assertNotNull(gast);
+//		assertTrue(heim != gast);
+//		assertTrue(toreHeim >= 0);
+//		assertTrue(toreGast >= 0);
 		
 		heim.goalDifference += toreHeim;
 		gast.goalDifference += toreGast;
@@ -60,17 +60,17 @@ public class Liga {
 	}
 	
 	public static int getGoalDiff(Team team) {
-		assertNotNull(team);
+//		assertNotNull(team);
 		return team.goalDifference;
 	}
 	
 	public static int getMatches(Team team) {
-		assertNotNull(team);
+//		assertNotNull(team);
 		return team.matches;
 	}
 	
 	public static int getPoints(Team team) {
-		assertNotNull(team);
+//		assertNotNull(team);
 		return team.points;
 	}
 }
