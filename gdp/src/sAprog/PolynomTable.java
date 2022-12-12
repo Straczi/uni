@@ -10,8 +10,38 @@ public class PolynomTable {
 		System.out.println(t.getX(0)); // liefert -10
 		System.out.println(t.getX(1)); // leifert -9.5
 		System.out.println(t.getX(40)); // liefert 10
-		System.out.println(t.getY(0));; // liefert 91
+		System.out.println(t.getY(0)); // liefert 91
 		System.out.println(t.getY(40)); // liefert 211
+
+		Polynom p1 = new Polynom(1, 2, 3, 4, 5);
+		Polynom p2 = new Polynom(1, 2, 3, 4, 5);
+
+		System.out.println(p1.equals(p2));
+
+		Polynom p3 = new Polynom(0, 0, 0, 0, 1, 2, 3, 4, 5);
+		System.out.println(p1.equals(p3));
+
+		Polynom p4 = new Polynom(1, 0);
+		System.out.println(p4);
+		Table t2 = new Table(p4, 0, 10, 10);
+		System.out.println(Arrays.toString(p4.innerPolynom));
+		System.out.println(t2.getX(0));
+		System.out.println(t2.getX(2));
+		System.out.println(t2.getX(10));
+		System.out.println(t2.getY(0));
+		System.out.println(t2.getY(2));
+		System.out.println(t2.getY(10));
+
+		System.out.println();
+		System.out.println("Derivatives:");
+		System.out.println();
+
+		Polynom pd1 = new Polynom(1, 1, 1, 1, 0);
+		Polynom pd2 = pd1.derivative();
+
+		System.out.println(pd1);
+		System.out.println(pd2);
+
 	}
 }
 
@@ -32,6 +62,7 @@ class Polynom {
 		return new Polynom(newPolynom);
 	}
 
+
 	@Override
 	public String toString() {
 		var sb = new StringBuilder();
@@ -41,99 +72,108 @@ class Polynom {
 			sb.append("*(x^");
 			sb.append(this.innerPolynom.length - i - 1);
 			sb.append(") ");
+			sb.append("+ ");
 		}
 
 		return sb.toString();
 	}
 
-//	public double getX(int i) {
-//		int y = 0;
-//		for (int j = 0; j < this.innerPolynom.length; j++) {
-//			y += this.innerPolynom[j] * Math.pow(i, this.innerPolynom.length - j - 1);
+//	@Override
+//	public boolean equals(Object otherObject) {
+//		if (this == otherObject) {
+//			return true;
 //		}
 //
-//		return y;
+//		if (otherObject instanceof Polynom other) {
+//			Polynom longer;
+//			Polynom shorter;
+//
+//			if (this.innerPolynom.length < other.innerPolynom.length) {
+//				longer = other;
+//				shorter = this;
+//			} else {
+//				longer = this;
+//				shorter = other;
+//			}
+//
+//			for (int i = 0; i < longer.innerPolynom.length; i++) {
+//				double a = longer.innerPolynom[longer.innerPolynom.length - i - 1];
+//				double b = (i < shorter.innerPolynom.length) ? shorter.innerPolynom[shorter.innerPolynom.length - i - 1] : 0;
+//
+//				if (a != b) {
+//					return false;
+//				}
+//			}
+//
+//			return true;
+//		}
+//
+//		return false;
 //	}
 
-	@Override
-	public boolean equals(Object otherObject) {
-		if (this == otherObject) {
-			return true;
+	public boolean equals(Polynom other) {
+		Polynom longer;
+		Polynom shorter;
+
+		if (this.innerPolynom.length < other.innerPolynom.length) {
+			longer = other;
+			shorter = this;
+		} else {
+			longer = this;
+			shorter = other;
 		}
 
-		boolean equals = true;
+		for (int i = 0; i < longer.innerPolynom.length; i++) {
+			double a = longer.innerPolynom[longer.innerPolynom.length - i - 1];
+			double b = (i < shorter.innerPolynom.length) ? shorter.innerPolynom[shorter.innerPolynom.length - i - 1] : 0;
 
-		if (otherObject instanceof Polynom other) {
-			Polynom longer;
-			Polynom shorter;
-
-			if (this.innerPolynom.length < other.innerPolynom.length) {
-				longer = other;
-				shorter = this;
-			} else {
-				longer = this;
-				shorter = other;
-			}
-
-			//Count leading zeroes
-			int leadingZeroes = 0;
-			for (int i = 0; i < longer.innerPolynom.length; i++) {
-				if (longer.innerPolynom[i] != 0.0d) {
-					break;
-				}
-				leadingZeroes++;
-			}
-
-			for (int i = 0; i < longer.innerPolynom.length; i++) {
-				if (
-						((longer.innerPolynom.length - i) <= shorter.innerPolynom.length)
-						&& longer.innerPolynom[longer.innerPolynom.length - 1 - i] != shorter.innerPolynom[shorter.innerPolynom.length - 1 - i]
-				) {
-
-				}
-
-
-				if (this.innerPolynom[i] != other.innerPolynom[i]) {
-					equals = false;
-					break;
-				}
+			if (a != b) {
+				return false;
 			}
 		}
 
-		return equals;
+		return true;
 	}
 }
 
 class Table {
-	double[] values;
+	Polynom polynom;
 	int from;
 	int to;
 	int steps;
 
 	public Table(Polynom polynom, int from, int to, int steps) {
-		double[] values = new double[steps];
-		double stepSize = ((double) steps) / (to - from);
-
-		double x = from;
-		for (int i = 0; i < values.length; i++) {
-			double value = 0;
-			for (int j = 0; j < polynom.innerPolynom.length; j++) {
-				value += polynom.innerPolynom[j] * Math.pow(from, polynom.innerPolynom.length - 1 - j);
-			}
-			values[i] = value;
-		}
-
-		this.values = values;
 		this.from = from;
 		this.to = to;
 		this.steps = steps;
+		this.polynom = polynom;
 	}
 
-	public int getX(int i) {
-		
+//	public double getX(double x) {
+//		double difference = Math.abs(to - from);
+//		double stepSize = difference / (steps - 1);
+//		return from + x * stepSize;
+//	}
+
+	public double getX(double x) {
+		double diff = Math.abs(this.to - this.from);
+		double stepSize = diff / (steps - 1);
+		return this.from + stepSize * x;
 	}
 
-	public double getY(int x) {
-		return this.values[x];
+
+	public double getY(double x) {
+		x = getX(x);
+		System.out.println("x = " + x);
+
+		double y = 0;
+
+		for (int i = 0; i < this.polynom.innerPolynom.length; i++) {
+			int degree = this.polynom.innerPolynom.length - 1 - i;
+			System.out.println("Degree = " + degree);
+			y += this.polynom.innerPolynom[i] * Math.pow(x, degree);
+		}
+
+		return y;
 	}
 }
