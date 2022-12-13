@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class PolynomTable {
 	public static void main(String[] args) {
+	
 		Polynom p = new Polynom(0.5, 3, 1, 0);
 		Table t = new Table(p.derivative(), -10, 10, 41);
 		System.out.println(t.getX(0)); // liefert -10
@@ -148,12 +149,6 @@ class Table {
 		this.steps = steps;
 		this.polynom = polynom;
 	}
-
-//	public double getX(double x) {
-//		double difference = Math.abs(to - from);
-//		double stepSize = difference / (steps - 1);
-//		return from + x * stepSize;
-//	}
 
 	public double getX(double x) {
 		double diff = Math.abs(this.to - this.from);
