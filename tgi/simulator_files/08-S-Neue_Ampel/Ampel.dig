@@ -236,12 +236,21 @@
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
-      <elementAttributes/>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Auto_rot</string>
+        </entry>
+      </elementAttributes>
       <pos x="1100" y="320"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
       <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Auto_gelb</string>
+        </entry>
         <entry>
           <string>Color</string>
           <awt-color>
@@ -257,6 +266,10 @@
     <visualElement>
       <elementName>LED</elementName>
       <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Auto_gruen</string>
+        </entry>
         <entry>
           <string>Color</string>
           <awt-color>
@@ -282,7 +295,7 @@
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>17</int>
+          <int>24</int>
         </entry>
       </elementAttributes>
       <pos x="840" y="260"/>
@@ -299,12 +312,21 @@
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
-      <elementAttributes/>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Fußgänger_rot</string>
+        </entry>
+      </elementAttributes>
       <pos x="1100" y="80"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
       <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Fußgänger_gruen</string>
+        </entry>
         <entry>
           <string>Color</string>
           <awt-color>
@@ -330,7 +352,7 @@
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>16</int>
+          <int>24</int>
         </entry>
       </elementAttributes>
       <pos x="840" y="20"/>
