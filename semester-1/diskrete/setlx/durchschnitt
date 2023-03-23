@@ -1,0 +1,22 @@
+len := procedure(arr) {
+	len := 0;
+	for (x in arr) {
+		len := len + 1;
+	}
+
+	return len;
+};
+
+average := procedure(numbers) {
+	sum := 0;
+
+	for (number in numbers) {
+		sum := sum + number;
+	}
+	
+	return sum / len(numbers);
+};
+
+arr := [1, 2, 3, 4, 5];
+avg := average(arr);
+print(avg);

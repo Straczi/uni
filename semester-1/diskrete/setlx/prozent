@@ -1,0 +1,5 @@
+prozent := procedure(p, a) {
+	return p/100 * a;
+};
+
+print(prozent(5, 80));

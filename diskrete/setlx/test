@@ -1,8 +1,0 @@
-exp := procedure(n) {
-	return closure(x) {
-		return x ** n;
-	};
-};
-
-
-print(exp(2)(8));
